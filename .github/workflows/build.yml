@@ -12,7 +12,7 @@ on:
       publish:
         type: boolean
         description: "Whether to publish or not"
-        default: true
+        default: false
       prerel_name:
         type: string
         description: "Pre-release name to be released"
@@ -45,7 +45,6 @@ jobs:
       fail-fast: false
       matrix:
         entry:
-          - { target: wasm32-unknown-wasi }
           - { target: wasm32-unknown-emscripten }
     runs-on: ubuntu-20.04
     steps:
